@@ -1,0 +1,35 @@
+public class World {
+    public Piece[][] board = new Piece[8][8];
+    public boolean WhiteKingDead = false;
+    public boolean BlackKingDead = false;
+
+    World(Player WhitePlayer, Player BlackPlayer)
+    {
+        board[0][4] = new KingPiece(0,4,WhitePlayer);
+        board[0][0] = new RookPiece(0,0,WhitePlayer);
+        board[0][7] = new RookPiece(0,7,WhitePlayer);
+
+        board[7][4] = new KingPiece(7,4,BlackPlayer);
+        board[7][7] = new RookPiece(7,7,BlackPlayer);
+        board[7][0] = new RookPiece(7,0,BlackPlayer);
+    }
+
+    void printBoard() {
+        System.out.println("===============================");
+        System.out.println("\t\tWhite Player");
+        System.out.println("   [a][b][c][d][e][f][g][h]");
+        for (int i = 0; i < 8; i++) {
+            System.out.print("[" + (i + 1) + "]");
+            for (int j = 0; j < 8; j++) {
+                if(board[i][j] == null)
+                    System.out.print("[ ]");
+                else
+                    System.out.print("[" + board[i][j].toString() + "]");
+            }
+            System.out.println();
+        }
+
+        System.out.println("\t\tBlack Player");
+        System.out.println("===============================");
+    }
+}
