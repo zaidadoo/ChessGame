@@ -1,5 +1,5 @@
-public class RookPiece extends Piece{
-    public RookPiece(int row, int column, Player player) {
+public class BishopPiece extends Piece{
+    public BishopPiece(int row, int column, Player player) {
         super(row, column, player);
     }
 
@@ -48,8 +48,8 @@ public class RookPiece extends Piece{
                 }
             }
 
-            // check if top blocked
-            if(newRow > 1)
+            // check if bottom blocked
+            if(newRow < -1)
             {
                 for(int i = -1; i > newRow; i--)
                 {
@@ -57,8 +57,8 @@ public class RookPiece extends Piece{
                 }
             }
 
-            // check if bottom blocked
-            if(newRow < -1)
+            // check if top blocked
+            if(newRow > 1)
             {
                 for(int i = 1; i < newRow; i++)
                 {
@@ -91,9 +91,9 @@ public class RookPiece extends Piece{
     public String toString()
     {
         if(this.player.PlayerColor == PlayerController.white)
-            return "♖";
+            return "♗";
         else if(this.player.PlayerColor == PlayerController.black)
-            return "♜";
+            return "♝";
         else
             return "ERROR";
     }

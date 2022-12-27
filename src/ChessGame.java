@@ -94,5 +94,18 @@ public class ChessGame {
 
             rounds++;
         }
+
+        System.out.println("===========================");
+
+        if(world.BlackKingDead == true)
+            System.out.println("Checkmate, White player wins.");
+
+        if(world.WhiteKingDead == true)
+            System.out.println("Checkmate, Black player wins.");
+
+        if(world.WhiteKingDead == false && world.BlackKingDead == false)
+            System.out.println("Tie, move count reached.");
+
+        System.out.println("===========================");
     }
 }

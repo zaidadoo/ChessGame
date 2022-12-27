@@ -8,10 +8,14 @@ public class World {
         board[0][4] = new KingPiece(0,4,WhitePlayer);
         board[0][0] = new RookPiece(0,0,WhitePlayer);
         board[0][7] = new RookPiece(0,7,WhitePlayer);
+        board[0][5] = new BishopPiece(0, 5, WhitePlayer);
+        board[0][2] = new BishopPiece(0, 2, WhitePlayer);
 
         board[7][4] = new KingPiece(7,4,BlackPlayer);
         board[7][7] = new RookPiece(7,7,BlackPlayer);
         board[7][0] = new RookPiece(7,0,BlackPlayer);
+        board[7][5] = new BishopPiece(7, 5, BlackPlayer);
+        board[7][2] = new BishopPiece(7, 2, BlackPlayer);
     }
 
     void printBoard() {
