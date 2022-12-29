@@ -1,5 +1,5 @@
-public class BishopPiece extends Piece {
-    public BishopPiece(int row, int col, Player player) {
+public class KnightPiece extends Piece {
+    public KnightPiece(int row, int col, Player player) {
         super(row, col, player);
     }
 
@@ -13,8 +13,8 @@ public class BishopPiece extends Piece {
         int newRow = row - this.row;
         int newCol = column - this.column;
 
-        // bishop can only move diagonally
-        if (Math.abs(newRow) != Math.abs(newCol)) {
+        // knight can only move 2 cells in one direction and 1 cell in the other direction
+        if ((Math.abs(newRow) != 2 || Math.abs(newCol) != 1) && (Math.abs(newRow) != 1 || Math.abs(newCol) != 2)) {
             return false;
         }
 
@@ -25,44 +25,6 @@ public class BishopPiece extends Piece {
         if (column > 7 || column < 0) {
             return false;
         }
-
-        // check if path is blocked
-        // moving diagonally downwards to the right
-        if (newRow > 0 && newCol > 0) {
-            for (int i = 1; i < newRow; i++) {
-                if (world.board[this.row + i][this.column + i] != null) {
-                    return false;
-                }
-            }
-        }
-
-        // moving diagonally downwards to the left
-        if (newRow > 0 && newCol < 0) {
-            for (int i = 1; i < newRow; i++) {
-                if (world.board[this.row + i][this.column - i] != null) {
-                    return false;
-                }
-            }
-        }
-
-        // moving diagonally upwards to the right
-        if (newRow < 0 && newCol > 0) {
-            for (int i = -1; i > newRow; i--) {
-                if (world.board[this.row + i][this.column - i] != null) {
-                    return false;
-                }
-            }
-        }
-
-        // moving diagonally upwards to the left
-        if (newRow < 0 && newCol < 0) {
-            for (int i = -1; i > newRow; i--) {
-                if (world.board[this.row + i][this.column + i] != null) {
-                    return false;
-                }
-            }
-        }
-
 
         // check if another piece is available at the destination
         if (world.board[row][column] != null) {
@@ -91,12 +53,11 @@ public class BishopPiece extends Piece {
     @Override
     public String toString() {
         if (this.player.PlayerColor == PlayerController.white) {
-            return "♗";
+            return "♘";
         } else if (this.player.PlayerColor == PlayerController.black) {
-            return "♝";
+            return "♞";
         } else {
             return "ERROR";
         }
     }
 }
-
