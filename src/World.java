@@ -12,6 +12,7 @@ public class World {
         board[0][2] = new BishopPiece(0, 2, WhitePlayer);
         board[0][1] = new KnightPiece(0, 1, WhitePlayer);
         board[0][6] = new KnightPiece(0, 6, WhitePlayer);
+        board[0][3] = new QueenPiece(0, 3, WhitePlayer);
 
         board[7][4] = new KingPiece(7,4,BlackPlayer);
         board[7][7] = new RookPiece(7,7,BlackPlayer);
@@ -20,6 +21,7 @@ public class World {
         board[7][2] = new BishopPiece(7, 2, BlackPlayer);
         board[7][1] = new KnightPiece(7, 1, BlackPlayer);
         board[7][6] = new KnightPiece(7, 6, BlackPlayer);
+        board[7][3] = new QueenPiece(7, 3, BlackPlayer);
     }
 
     void printBoard() {
