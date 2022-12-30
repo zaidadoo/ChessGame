@@ -77,9 +77,7 @@ public class PawnPiece extends Piece {
             // kill piece
             world.board[row][column].killPiece(world);
         }
-
-        // if destination has no piece
-        if(world.board[row][column] == null)
+        else
         {
             // pawn can only move two squares forward on its first move if both squares are unoccupied
             if (Math.abs(newRow) == 2)

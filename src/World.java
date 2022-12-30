@@ -3,7 +3,16 @@ public class World {
     public boolean WhiteKingDead = false;
     public boolean BlackKingDead = false;
 
-    World(Player WhitePlayer, Player BlackPlayer)
+    private static World instance;
+
+    public static World getInstance(Player WhitePlayer, Player BlackPlayer) {
+        if (instance == null) {
+            instance = new World(WhitePlayer, BlackPlayer);
+        }
+        return instance;
+    }
+
+    private World(Player WhitePlayer, Player BlackPlayer)
     {
         board[0][4] = new KingPiece(0,4,WhitePlayer);
         board[0][0] = new RookPiece(0,0,WhitePlayer);

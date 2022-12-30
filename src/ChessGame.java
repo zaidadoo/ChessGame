@@ -45,7 +45,7 @@ public class ChessGame {
         Player WhitePlayer = new Player(PlayerController.white);
         Player BlackPlayer = new Player(PlayerController.black);
 
-        World world = new World(WhitePlayer, BlackPlayer);
+        World world = World.getInstance(WhitePlayer, BlackPlayer);
 
         int rounds = 0;
         Scanner input = new Scanner(System.in);
